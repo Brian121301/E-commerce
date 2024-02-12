@@ -9,9 +9,9 @@ class Payment
    public function gateway()
    {
        $gateway = Omnipay::create('PayPal_Express');
-       $gateway->setUsername("sb-7j4hl606677@personal.example.com");
-       $gateway->setPassword("ARySNgUCvyU9tEBp-zsd0WbbNO_7Nxxxxoi3xxxxh2cTuDxRh7xxxxVu9W5ZkIBGYqjqfzHrjY3wta");
-       $gateway->setSignature("EOEwezsNWMWQM63xxxxxknr8QLoAOoC6lD_-kFqjgKxxxxxwGWIvsJO6vP3syd10xspKbx7LgurYNt9");
+       $gateway->setUsername("sb-r2lgp29539913@personal.example.com");
+       $gateway->setPassword("EbI&W^G7");
+       //$gateway->setSignature("EOEwezsNWMWQM63xxxxxknr8QLoAOoC6lD_-kFqjgKxxxxxwGWIvsJO6vP3syd10xspKbx7LgurYNt9");
        $gateway->setTestMode(true);
        return $gateway;
    }

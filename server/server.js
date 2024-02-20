@@ -8,10 +8,9 @@ app.use(express.urlencoded({
 }));
 const port = process.env.PORT || 3000;
 const environment = process.env.ENVIRONMENT || 'sandbox';
-const client_id = process.env.CLIENT_ID;
-const client_secret = process.env.CLIENT_SECRET;
+const client_id = process.env.PAYPAL_CLIENT_ID;
+const client_secret = process.env.PAYPAL_CLIENT_SECRET;
 const endpoint_url = environment === 'sandbox' ? 'https://api-m.sandbox.paypal.com' : 'https://api-m.paypal.com';
-
 /**
  * Creates an order and returns it as a JSON response.
  * @function
@@ -49,7 +48,7 @@ app.post('/create_order', (req, res) => {
                 .then(res => res.json())
                 .then(json => {
                     res.send(json);
-                }) //Send minimal data to client
+                }) //Send minimal data to client, but for now send all data
         })
         .catch(err => {
             console.log(err);
@@ -110,10 +109,10 @@ app.get('/script.js', (req, res) => {
 //PayPal Developer YouTube Video:
 //How to Retrieve an API Access Token (Node.js)
 //https://www.youtube.com/watch?v=HOkkbGSxmp4
-function get_access_token() {
+async function get_access_token() {
     const auth = `${client_id}:${client_secret}`
     const data = 'grant_type=client_credentials'
-    return fetch(endpoint_url + '/v1/oauth2/token', {
+    return await fetch(endpoint_url + '/v1/oauth2/token', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',

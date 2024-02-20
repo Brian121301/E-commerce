@@ -99,7 +99,7 @@ app.get('/', (req, res) => {
 });
 //Serves the style.css file
 app.get('/style.css', (req, res) => {
-    res.sendFile(process.cwd() + '/shoppingcart/assets/css/style.css');
+    res.sendFile(process.cwd() + '/assets/css/style.css');
 });
 //Serves the script.js file
 app.get('/script.js', (req, res) => {

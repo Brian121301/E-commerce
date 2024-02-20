@@ -1,6 +1,3 @@
-import "dotenv/config";
-
-const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PORT = 3000 } = process.env;
 // Helper / Utility functions
 let url_to_head = (url) => {
     return new Promise(function(resolve, reject) {
@@ -35,8 +32,6 @@ let alerts = document.getElementById("alerts");
 url_to_head(paypal_sdk_url + "?client-id=" + client_id + "&enable-funding=venmo&currency=" + currency + "&intent=" + intent)
 .then(() => {
     //Handle loading spinner
-    document.getElementById("loading").classList.add("hide");
-    document.getElementById("content").classList.remove("hide");
     let alerts = document.getElementById("alerts");
     let paypal_buttons = paypal.Buttons({ // https://developer.paypal.com/sdk/js/reference
         onClick: (data) => { // https://developer.paypal.com/sdk/js/reference/#link-oninitonclick

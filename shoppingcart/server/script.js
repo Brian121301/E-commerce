@@ -25,7 +25,7 @@ let handle_click = (event) => {
 }
 document.addEventListener("click", handle_click);
 const paypal_sdk_url = "https://www.paypal.com/sdk/js";
-const client_id = PAYPAL_CLIENT_ID;
+const client_id = "AaBEEtcldABbD7WP75p9guMwm7OYOCjDE93wLlXQvPHxgxd5AhmCwoKLH0JpfXMZkAnPg1d1qs7YZ3sd";
 const currency = "USD";
 const intent = "capture";
 let alerts = document.getElementById("alerts");
@@ -91,7 +91,7 @@ url_to_head(paypal_sdk_url + "?client-id=" + client_id + "&enable-funding=venmo&
             console.log(err);
         }
     });
-    paypal_buttons.render('#payment_options');
+    paypal_buttons.render('#paypal-button-container');
 })
 .catch((error) => {
     console.error(error);

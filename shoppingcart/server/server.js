@@ -94,17 +94,17 @@ app.post('/complete_order', (req, res) => {
 
 // Helper / Utility functions
 
-//Servers the index.html file
+//Serves the checkout.html file
 app.get('/', (req, res) => {
     res.sendFile(process.cwd() + '/shoppingcart/client/checkout.html');
 });
-//Servers the style.css file
+//Serves the style.css file
 app.get('/style.css', (req, res) => {
     res.sendFile(process.cwd() + '/assets/css/style.css');
 });
-//Servers the script.js file
+//Serves the script.js file
 app.get('/script.js', (req, res) => {
-    res.sendFile(process.cwd() + '/shoppingcart/script.js');
+    res.sendFile(process.cwd() + '/shoppingcart/server/script.js');
 });
 
 //PayPal Developer YouTube Video:

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jules Crafting Corner - Products</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffd9e3;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header__title {
+            font-size: 24px;
+        }
+
+        /* Navigation styles */
+        .nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        /* Product listing styles */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: calc(33.33% - 20px); /* Adjusted width for three products in a row */
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product__image {
+            display: block;
+            margin: 0 auto 10px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .product__title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product__description {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .product__price {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product__button {
+            background-color: #ff7f0e;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product__button:hover {
+            background-color: #e56600;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .search-input {
+            padding: 10px;
+            width: 60%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .search-button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ff7f0e;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #e56600;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Jules Crafting Corner - Products</h1>
+    </header>
+
+    <nav class="nav">
+        <a href="#">Home</a>
+        <!-- Removed Login button -->
+        <a href="#">Shopping Cart</a>
+    </nav>
+
+    <!-- Added Search bar -->
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search products...">
+        <button class="search-button">Search</button>
+    </div>
+
+    <section class="products">
+        <!-- Product items -->
+        <div class="product">
+            <img src="https://i.etsystatic.com/8180278/r/il/93a85e/474827258/il_1588xN.474827258_f0d7.jpg" alt="Crafting Supplies" class="product__image">
+            <h2 class="product__title">Stainless Steel Heart Charm</h2>
+            <p class="product__description"> Stainless Steel Jewelry Pendant, Set of 10 SST Findings 8x11x1mm Small Heart Charm (010)</p>
+            <p class="product__price">$10.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://i.etsystatic.com/21515974/r/il/2daab0/5524227326/il_1588xN.5524227326_bpot.jpg" alt="Handmade Clothing" class="product__image">
+            <h2 class="product__title">Hygge Gift Box</h2>
+            <p class="product__description">Engraved Gift, Cashmere Scarf Gift, Personalized Gift Box, Spa gift box,</p>
+            <p class="product__price">$22.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://mms-images.out.customink.com/mms/images/catalog/3de4f2ed2cedf5b0217e45b9eeeaf3d3/colors/181102/views/alt/front_medium.png?placeMax=1&placeMaxPct=0.8&placeUseProduct=1&placeUseView=front&ixbg=%23ffffff&ixfm=jpeg&ixq=60&ixw=659&autoNegate=0&design=nmp0-00cg-4gv0&digest=000000028" alt="Product 3" class="product__image">
+            <h2 class="product__title">Handles Cotton Canvas Tote Bag</h2>
+            <p class="product__description">Smaller sized totes are perfect for giveaways, conferences, and reunions. An easy way to make an event memorable!</p>
+            <p class="product__price">$19.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/A1zjgYZSxsL.__AC_SX300_SY300_QL70_FMwebp_.jpg" alt="Product 4" class="product__image">
+            <h2 class="product__title">Arts & Crafts Supplies Kits</h2>
+            <p class="product__description">Materials Set for Kids, Toddler - Carl & Kay</p>
+            <p class="product__price">$14.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://jiffyshirts1.imgix.net/4d2ca587609f68.png?ixlib=rb-0.3.5&auto=format" alt="Product 5" class="product__image">
+            <h2 class="product__title">True Royal T-shirt</h2>
+            <p class="product__description">Toddler Jersey Short-Sleeve T-Shirt</p>
+            <p class="product__price">$14.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/mush-rugs.jpg?v=1702922951" alt="Product 6" class="product__image">
+            <h2 class="product__title">Tufted rugs and mats</h2>
+            <p class="product__description">rug made, using a hooking or tufting method</p>
+            <p class="product__price">$39.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/paper-wedding-flowers.jpg?v=1702922992" alt="Product 7" class="product__image">
+            <h2 class="product__title">Paper flowers</h2>
+            <p class="product__description">Paper flowers are simple crafts for beautiful decorating</p>
+            <p class="product__price">$29.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/GlazeMePretty20220828-4.jpg?v=1702923191" alt="Product 8" class="product__image">
+            <h2 class="product__title">clay plant pots</h2>
+            <p class="product__description"> plant care being a long-term commitment,often cost- and space-prohibitive</p>
+            <p class="product__price">$20.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/felted-dryer-balls.jpg?v=1702923219" alt="Product 9" class="product__image">
+            <h2 class="product__title">Needle felted goods</h2>
+            <p class="product__description">Needle felting is a sculptural wool craft made using a long, thin needle with a series of notches at the tip. </p>
+            <p class="product__price">$19.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/cosmetic-bag.jpg?v=1702923347" alt="Product 10" class="product__image">
+            <h2 class="product__title">Patterned Birch Lane</h2>
+            <p class="product__description">personalize them with silkscreening, beading, hand painting, textile dyeing, or embroidering. </p>
+            <p class="product__price">$9.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/obakki-volcan-wall-hanging-wall-hangings-134799_800x_8c7ec3c0-8f9c-470c-a083-fb38f32f509a.jpg?v=1702923419" alt="Product 11" class="product__image">
+            <h2 class="product__title">Woven and knotted home decor</h2>
+            <p class="product__description">handcrafted home décor like this textile wall hanging, made to order in custom sizes.</p>
+            <p class="product__price">$49.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/files/disco-ball-craft.jpg?v=1702923538" alt="Product 12" class="product__image">
+            <h2 class="product__title">Disco hat</h2>
+            <p class="product__description">bedazzling hats and even decorative helmets with a mirrored exterior.</p>
+            <p class="product__price">$34.99</p>
+            <button class="product__button">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Jules Crafting Corner</p>
+    </footer>
+</body>
+</html>

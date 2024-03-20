@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="homepage.php">
+        <a href="index.php">
             <h1>Jules Crafting Corner</h1>
         </a>
     </header>

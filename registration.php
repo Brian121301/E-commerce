@@ -57,25 +57,23 @@
     </header>
 
     <nav>
-        <a href="index.php">Home</a>
+        <a href="Homepage.php">Home</a>
         <a href="gallery.php">Gallery</a>
         <a href="products.php">Product Listing</a>
         <a href="cart.php">Shopping Cart</a>
     </nav>
 
     <section>
-        <h2>Login</h2>
+        <h2>Registration</h2>
         <div>
-            <form method="post" action="process_login.php">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit" value="Login">
-            </form>
-        </div>
-        <div>
-            <h3>Don't have an account?</h3>
-            <input type="button" value="register" onclick="window.location.href='registration.php';">
-        </div>
+        <form method="post" action="process_registration.php">
+            <input type="text" name="first_name" placeholder="First Name">
+            <input type="text" name="last_name" placeholder="Last Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Register">
+        </form>
+    </div>
     </section>
 
     <footer>

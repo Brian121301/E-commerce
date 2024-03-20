@@ -63,3 +63,8 @@ th {
     background-color: #ff80b3;
     color: #fff;
 }
+#payment-box{
+    margin: auto;
+    width: 3em;
+    height: 3em;
+}

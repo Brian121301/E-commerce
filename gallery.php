@@ -17,7 +17,7 @@
     </header>
 
     <nav>
-        <a href="./gallery.php">Gallery</a>
+        <a href="./index.php">Homepage</a>
         <a href="./login.php">Login</a>
         <a href="./products.php">Product Listing</a>
         <a href="./cart.php">Shopping Cart</a>

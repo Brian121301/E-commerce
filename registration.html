@@ -52,7 +52,7 @@
 
 <body>
     <header>
-        <img src="01DEC706-3183-4853-8AB2-EBCCD27D8118.jpg" alt="Jules Crafting Corner Logo" height="120" width="120">
+        <img src="images/01DEC706-3183-4853-8AB2-EBCCD27D8118.jpg" alt="Jules Crafting Corner Logo" height="120" width="120">
         <h1>Jules Crafting Corner</h1>
     </header>
 
@@ -70,7 +70,56 @@
         <p>&copy; 2024 Jules Crafting Corner</p>
     </footer>
 
-    <script src="config.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.996.0.min.js"></script>
+<script src="config.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById('registerButton').addEventListener('click', async function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const poolData = {
+                UserPoolId: config.userPoolId, 
+                ClientId: config.clientId 
+            };
+            const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
+            var attributeList = [];
+
+            var dataEmail = {
+                Name: 'email',
+                Value: email
+            };
+
+            var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
+
+            attributeList.push(attributeEmail);
+
+            userPool.signUp(username, password, attributeList, null, function(err, result) {
+                if (err) {
+                    console.error(err);
+                    alert('Registration failed. Please try again later.');
+                    return;
+                }
+                var cognitoUser = result.user;
+                console.log('user name is ' + cognitoUser.getUsername());
+                alert('Registration successful! Please check your email to verify your account.');
+                // Optionally, redirect the user to another page after successful registration
+                // window.location.href = '/success.html';
+
+                // Clear the form fields
+                document.getElementById('username').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
+            });
+        });
+    });
+</script>
+
+    <!-- <script src="config.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('registerButton').addEventListener('click', async function(event) {
@@ -113,7 +162,7 @@
                 }
             });
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

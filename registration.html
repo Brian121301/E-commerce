@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jules Crafting Corner - Registration</title>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.996.0.min.js"></script>
     <style>
         body {
             background-color: #ffd9e3;
@@ -58,17 +59,23 @@
     </header>
 
     <section>
-        <h2>Registration</h2>
+        <!-- <h2>Registration</h2>
         <div id="registrationForm">
-            <input type="text" id="username" placeholder="Username">
-            <input type="email" id="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Password">
+            <input type="text" id='username' placeholder="Username">
+            <input type="email" id='email' placeholder="Email">
+            <input type="password" id='password' placeholder="Password">
             <button id="registerButton">Register</button>
-        </div>
-        <div>
-            <h3>Already have an account?</h3>
-            <input type="button" value="Login" onclick="window.location.href='login.html';">
-        </div>
+        </div> -->
+        <h2>Registration</h2>
+        <form action="register.php" method="post">
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <button type="submit">Register</button>
+            <div>
+                <h3>Already have an account?</h3>
+                <input type="button" value="Login" onclick="window.location.href='login.html';">
+            </div>
     </section>
 
     <div id="registrationStatus"></div>
@@ -77,10 +84,14 @@
         <p>&copy; 2024 Jules Crafting Corner</p>
     </footer>
 
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.996.0.min.js"></script>
+    <!-- <script src="https://sdk.amazonaws.com/js/aws-sdk-2.996.0.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/5.2.1/amazon-cognito-identity.min.js"></script>
+
     <script src="config.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", async function () {
+            const { CognitoUserPool, CognitoUserAttribute } = AmazonCognitoIdentity; // Import necessary modules
+
             document.getElementById('registerButton').addEventListener('click', async function (event) {
                 event.preventDefault();
 
@@ -89,10 +100,10 @@
                 const password = document.getElementById('password').value;
 
                 const poolData = {
-                    UserPoolId: config.userPoolId,
-                    ClientId: config.clientId
+                    UserPoolId: config.cognito.userPoolId, // Access the userPoolId from config
+                    ClientId: config.cognito.clientId // Access the clientId from config
                 };
-                const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+                const userPool = new CognitoUserPool(poolData);
 
                 var attributeList = [];
 
@@ -101,7 +112,7 @@
                     Value: email
                 };
 
-                var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
+                var attributeEmail = new CognitoUserAttribute(dataEmail);
 
                 attributeList.push(attributeEmail);
 
@@ -125,7 +136,8 @@
                 });
             });
         });
-    </script>
+    </script> -->
+
 
     <!-- <script src="config.js"></script>
     <script>
